@@ -1,0 +1,25 @@
+{
+  "name": "http-servers-benchmark",
+  "version": "1.0.0",
+  "description": "Benchmark comparison of HTTP servers in Node.js, Deno, Bun, and Go",
+  "scripts": {
+    "start:node": "node servers/node/server.js",
+    "start:fastify": "node servers/fastify/server.js",
+    "start:hono-node": "node servers/hono/node/server.js",
+    "start:deno": "deno run --allow-net servers/deno/server.ts",
+    "start:hono-deno": "deno run --allow-net servers/hono/deno/server.ts",
+    "start:bun": "bun run servers/bun/server.ts",
+    "start:hono-bun": "bun run servers/hono/bun/server.ts",
+    "start:go": "cd servers/go && go run server.go",
+    "start:all": "concurrently \"npm run start:node\" \"npm run start:fastify\" \"npm run start:hono-node\" \"npm run start:deno\" \"npm run start:hono-deno\" \"npm run start:bun\" \"npm run start:hono-bun\" \"npm run start:go\"",
+    "benchmark": "node benchmark/benchmark.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.3",
+    "autocannon": "^7.12.0",
+    "fastify": "^4.25.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
