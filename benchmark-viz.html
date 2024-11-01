@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Benchmark Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .chart-container {
+            margin-bottom: 40px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Benchmark Results</h1>
+        <div class="chart-container">
+            <canvas id="requestsChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="latencyChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="throughputChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Fetch and process the benchmark data
+        fetch('benchmark-results.json')
+            .then(response => response.json())
+            .then(data => {
+                const names = data.map(d => d.name);
+                const requests = data.map(d => d.requests.average);
+                const latency = data.map(d => d.latency.average);
+                const throughput = data.map(d => d.throughput.average / 1_000_000); // Convert to MB/s
+
+                // Common chart options
+                const commonOptions = {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0,0,0,0.1)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                };
+
+                // Create Requests/sec chart
+                new Chart(document.getElementById('requestsChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: names,
+                        datasets: [{
+                            label: 'Requests/sec',
+                            data: requests,
+                            backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        ...commonOptions,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Requests per Second',
+                                font: { size: 16 }
+                            }
+                        }
+                    }
+                });
+
+                // Create Latency chart
+                new Chart(document.getElementById('latencyChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: names,
+                        datasets: [{
+                            label: 'Latency (ms)',
+                            data: latency,
+                            backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        ...commonOptions,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Average Latency (ms)',
+                                font: { size: 16 }
+                            }
+                        }
+                    }
+                });
+
+                // Create Throughput chart
+                new Chart(document.getElementById('throughputChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: names,
+                        datasets: [{
+                            label: 'Throughput (MB/s)',
+                            data: throughput,
+                            backgroundColor: 'rgba(75, 192, 192, 0.8)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        ...commonOptions,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Average Throughput (MB/s)',
+                                font: { size: 16 }
+                            }
+                        }
+                    }
+                });
+            });
+    </script>
+</body>
+</html> 

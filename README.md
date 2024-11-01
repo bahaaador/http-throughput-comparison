@@ -38,3 +38,11 @@ npm run start:all
 npm run benchmark
 ```
 
+
+## Visualizing the results
+
+Open the `benchmark-viz.html` file in your browser.
+
+## License
+
+This project is licensed under the MIT License.
