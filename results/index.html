@@ -59,7 +59,7 @@
         function updateBenchmark() {
             const selectedBenchmark = document.getElementById('benchmark-selector').value;
 
-            fetch(`results/${selectedBenchmark}`)
+            fetch(`${selectedBenchmark}`)
                 .then(response => response.json())
                 .then(data => {
                     const names = data.map(d => d.name);
