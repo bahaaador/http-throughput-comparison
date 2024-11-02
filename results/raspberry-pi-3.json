@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Node.js",
+    "requests": {
+      "average": 1425,
+      "mean": 1425,
+      "stddev": 277.82,
+      "min": 844,
+      "max": 1664
+    },
+    "latency": {
+      "average": 69.49,
+      "mean": 69.49,
+      "stddev": 25.05,
+      "min": 37,
+      "max": 253
+    },
+    "throughput": {
+      "average": 294976,
+      "mean": 294976,
+      "stddev": 57515.32,
+      "min": 174708,
+      "max": 344448
+    }
+  },
+  {
+    "name": "Deno",
+    "requests": {
+      "average": 3587.6,
+      "mean": 3587.6,
+      "stddev": 335.2,
+      "min": 2745,
+      "max": 3932
+    },
+    "latency": {
+      "average": 27.37,
+      "mean": 27.37,
+      "stddev": 11.59,
+      "min": 6,
+      "max": 174
+    },
+    "throughput": {
+      "average": 577523.2,
+      "mean": 577523.2,
+      "stddev": 53954.9,
+      "min": 441945,
+      "max": 633052
+    }
+  },
+  {
+    "name": "Bun",
+    "requests": {
+      "average": 6082.8,
+      "mean": 6082.8,
+      "stddev": 346.35,
+      "min": 5624,
+      "max": 6670
+    },
+    "latency": {
+      "average": 15.94,
+      "mean": 15.94,
+      "stddev": 5.49,
+      "min": 3,
+      "max": 50
+    },
+    "throughput": {
+      "average": 833228.8,
+      "mean": 833228.8,
+      "stddev": 47542.42,
+      "min": 770488,
+      "max": 913790
+    }
+  },
+  {
+    "name": "Go",
+    "requests": {
+      "average": 9044.8,
+      "mean": 9044.8,
+      "stddev": 275.38,
+      "min": 8442,
+      "max": 9421
+    },
+    "latency": {
+      "average": 10.56,
+      "mean": 10.56,
+      "stddev": 5.48,
+      "min": 2,
+      "max": 63
+    },
+    "throughput": {
+      "average": 1239244.8,
+      "mean": 1239244.8,
+      "stddev": 37874.3,
+      "min": 1156554,
+      "max": 1290677
+    }
+  },
+  {
+    "name": "Fastify",
+    "requests": {
+      "average": 1145.8,
+      "mean": 1145.8,
+      "stddev": 266.01,
+      "min": 700,
+      "max": 1398
+    },
+    "latency": {
+      "average": 86.41,
+      "mean": 86.41,
+      "stddev": 30.55,
+      "min": 52,
+      "max": 303
+    },
+    "throughput": {
+      "average": 233760,
+      "mean": 233760,
+      "stddev": 54281.63,
+      "min": 142800,
+      "max": 285192
+    }
+  },
+  {
+    "name": "Hono-Node",
+    "requests": {
+      "average": 1050.5,
+      "mean": 1050.5,
+      "stddev": 217.54,
+      "min": 615,
+      "max": 1268
+    },
+    "latency": {
+      "average": 94.18,
+      "mean": 94.18,
+      "stddev": 30.3,
+      "min": 5,
+      "max": 299
+    },
+    "throughput": {
+      "average": 221673.6,
+      "mean": 221673.6,
+      "stddev": 45899.82,
+      "min": 129765,
+      "max": 267548
+    }
+  },
+  {
+    "name": "Hono-Deno",
+    "requests": {
+      "average": 3388.8,
+      "mean": 3388.8,
+      "stddev": 375.65,
+      "min": 2387,
+      "max": 3692
+    },
+    "latency": {
+      "average": 28.99,
+      "mean": 28.99,
+      "stddev": 10.77,
+      "min": 10,
+      "max": 192
+    },
+    "throughput": {
+      "average": 623475.2,
+      "mean": 623475.2,
+      "stddev": 69094.89,
+      "min": 439208,
+      "max": 679328
+    }
+  },
+  {
+    "name": "Hono-Bun",
+    "requests": {
+      "average": 4704.8,
+      "mean": 4704.8,
+      "stddev": 278.86,
+      "min": 4178,
+      "max": 5031
+    },
+    "latency": {
+      "average": 20.76,
+      "mean": 20.76,
+      "stddev": 8.14,
+      "min": 4,
+      "max": 68
+    },
+    "throughput": {
+      "average": 752691.2,
+      "mean": 752691.2,
+      "stddev": 44675.17,
+      "min": 668480,
+      "max": 804960
+    }
+  }
+]
