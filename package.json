@@ -12,7 +12,7 @@
     "start:hono-bun": "bun run servers/hono/bun/server.ts",
     "start:go": "cd servers/go && go run server.go",
     "start:all": "concurrently \"npm run start:node\" \"npm run start:fastify\" \"npm run start:hono-node\" \"npm run start:deno\" \"npm run start:hono-deno\" \"npm run start:bun\" \"npm run start:hono-bun\" \"npm run start:go\"",
-    "benchmark": "node benchmark/benchmark.js"
+    "benchmark": "HOST=localhost node benchmark/benchmark.js"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.3",

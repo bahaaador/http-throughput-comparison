@@ -6,6 +6,7 @@ const run = promisify(autocannon);
 
 const DURATION = 10; // seconds
 const CONNECTIONS = 100;
+const HOST = process.env.HOST || 'localhost';
 
 async function runBenchmark(url, name) {
   console.log(`Running benchmark for ${name}...`);
@@ -45,14 +46,14 @@ async function runBenchmark(url, name) {
 
 async function main() {
   const servers = [
-    { url: 'http://localhost:3000', name: 'Node.js' },
-    { url: 'http://localhost:3001', name: 'Deno' },
-    { url: 'http://localhost:3002', name: 'Bun' },
-    { url: 'http://localhost:3003', name: 'Go' },
-    { url: 'http://localhost:3004', name: 'Fastify' },
-    { url: 'http://localhost:3005', name: 'Hono-Node' },
-    { url: 'http://localhost:3006', name: 'Hono-Deno' },
-    { url: 'http://localhost:3007', name: 'Hono-Bun' },
+    { url: `http://${HOST}:3000`, name: 'Node.js' },
+    { url: `http://${HOST}:3001`, name: 'Deno' },
+    { url: `http://${HOST}:3002`, name: 'Bun' },
+    { url: `http://${HOST}:3003`, name: 'Go' },
+    { url: `http://${HOST}:3004`, name: 'Fastify' },
+    { url: `http://${HOST}:3005`, name: 'Hono-Node' },
+    { url: `http://${HOST}:3006`, name: 'Hono-Deno' },
+    { url: `http://${HOST}:3007`, name: 'Hono-Bun' },
   ];
 
   const results = [];
